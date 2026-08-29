@@ -5,6 +5,18 @@ import { dirname, join, relative, sep } from 'node:path';
 const codexRoot = process.env.CODEX_HOME || join(homedir(), '.codex');
 const skillsRoot = join(codexRoot, 'skills');
 const outputPath = join(process.cwd(), 'app', 'data', 'agents.generated.json');
+const examplePath = join(process.cwd(), 'app', 'data', 'agents.example.json');
+
+async function writeExampleSnapshot(message) {
+  const example = JSON.parse(await readFile(examplePath, 'utf8'));
+
+  await writeFile(
+    outputPath,
+    `${JSON.stringify({ ...example, generatedAt: new Date().toISOString() }, null, 2)}\n`,
+    'utf8',
+  );
+  console.log(`${message}; using the bundled demo agents.`);
+}
 
 async function walk(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -71,11 +83,11 @@ try {
     );
     console.log(`Synced ${agents.length} Codex agents.`);
   } else {
-    console.log('No local Codex agents found; preserving the existing snapshot.');
+    await writeExampleSnapshot('No local Codex agents found');
   }
 } catch (error) {
   if (error?.code === 'ENOENT') {
-    console.log('Local .codex agents are unavailable; preserving the existing snapshot.');
+    await writeExampleSnapshot('Local .codex agents are unavailable');
   } else {
     throw error;
   }
