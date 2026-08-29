@@ -33,6 +33,8 @@ yarn-error.log*
 .vercel
 next-env.d.ts
 /dist/
+/hostinger-dist/
 /.wrangler/
 /outputs/
 /work/
+/app/data/agents.generated.json

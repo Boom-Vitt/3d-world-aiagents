@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-01-01T00:00:00.000Z",
+  "source": "Bundled demo data — connect your local Codex skills to replace it",
+  "agents": [
+    {
+      "id": "demo-builder",
+      "name": "Builder",
+      "skill": "demo-builder",
+      "description": "Builds focused product features",
+      "system": false
+    },
+    {
+      "id": "demo-researcher",
+      "name": "Researcher",
+      "skill": "demo-researcher",
+      "description": "Collects and organizes useful context",
+      "system": false
+    },
+    {
+      "id": "demo-designer",
+      "name": "Designer",
+      "skill": "demo-designer",
+      "description": "Shapes clear, accessible interfaces",
+      "system": false
+    },
+    {
+      "id": "demo-reviewer",
+      "name": "Reviewer",
+      "skill": "demo-reviewer",
+      "description": "Checks quality, safety, and regressions",
+      "system": false
+    },
+    {
+      "id": "demo-docs",
+      "name": "Docs",
+      "skill": "demo-docs",
+      "description": "Turns technical work into clear guidance",
+      "system": false
+    },
+    {
+      "id": "demo-orchestrator",
+      "name": "Orchestrator",
+      "skill": "demo-orchestrator",
+      "description": "Coordinates work across the agent office",
+      "system": true
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 {
-  "name": "sites-project",
+  "name": "3d-world-aiagents",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "engines": {
     "node": ">=22.13.0"
   },
@@ -11,6 +12,9 @@
     "dev": "vinext dev",
     "prebuild": "npm run sync:agents",
     "build": "vinext build",
+    "prebuild:hostinger": "npm run sync:agents",
+    "build:hostinger": "vite build --config vite.hostinger.config.ts",
+    "preview:hostinger": "vite preview --config vite.hostinger.config.ts",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"
